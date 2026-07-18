@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Changelog — FileOrganizerAI</title>
+<meta name="description" content="The release history of FileOrganizerAI — the offline, private file organizer for Windows. Version notes on organization, on-device AI, privacy, and languages."/>
+<meta property="og:title" content="Changelog — FileOrganizerAI"/>
+<meta property="og:description" content="The release history of FileOrganizerAI — offline file organization with optional on-device AI."/>
+<meta property="og:image" content="https://raw.githubusercontent.com/jjopensoftworks-blip/FileOrganizerAIPage/main/docs/social-preview.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#0b1326",
+                    "surface-container-highest": "#2d3449",
+                    "surface-variant": "#2d3449",
+                    "electric-blue": "#60A5FA",
+                    "surface-container-high": "#222a3d",
+                    "on-surface": "#dae2fd",
+                    "secondary-container": "#00a572",
+                    "secondary": "#4edea3",
+                    "primary": "#adc6ff",
+                    "error-red": "#EF4444",
+                    "surface-deep": "#020617",
+                    "tertiary": "#ffb95f",
+                    "surface-dim": "#0b1326",
+                    "warning-amber": "#D97706",
+                    "primary-container": "#4d8eff",
+                    "surface-border": "#1E293B",
+                    "background": "#0b1326",
+                    "surface-container": "#171f33",
+                    "on-primary-container": "#00285d",
+                    "on-surface-variant": "#c2c6d6",
+                    "on-primary": "#002e6a",
+                    "text-muted": "#94A3B8"
+            },
+            "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+            "spacing": { "container-gap": "24px", "gutter": "16px", "bento-padding": "24px", "margin-page": "32px", "unit": "4px" },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "code-md": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "code-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bento-card { border: 1px solid #1E293B; background-color: #0F172A; }
+        .glass-panel { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); border: 1px solid rgba(30, 41, 59, 0.5); }
+        /* timeline connector */
+        .tl-line { background: linear-gradient(to bottom, #1E293B 0%, #1E293B 100%); }
+    </style>
+</head>
+<body class="bg-surface-deep text-on-surface font-body-md selection:bg-electric-blue/30 selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container border-b border-surface-border px-margin-page h-16 flex justify-between items-center max-w-full">
+<a href="index.html" class="flex items-center gap-3">
+<span class="material-symbols-outlined text-electric-blue text-[28px]">folder_managed</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">FileOrganizerAI</span>
+</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="index.html#features">Features</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="index.html#how-it-works">How it works</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="index.html#privacy">Privacy</a>
+<a class="font-body-md text-body-md text-electric-blue border-b-2 border-electric-blue pb-1 hover:text-on-surface transition-colors duration-200" href="changelog.html">Changelog</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="index.html#download" class="hidden lg:flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 font-label-sm text-label-sm active:opacity-80 transition-all">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Get the app
+            </a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-16 p-margin-page max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-container-gap">
+
+<!-- Sidebar: Jump to version -->
+<aside class="lg:w-64 shrink-0">
+<div class="lg:sticky lg:top-24 space-y-6">
+<div class="bento-card p-4">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-blue text-[24px]">folder_managed</span>
+<div>
+<p class="font-headline-md text-[16px] text-on-surface leading-tight">FileOrganizerAI</p>
+<p class="font-label-sm text-[10px] text-text-muted">v1.0.0 · STABLE</p>
+</div>
+</div>
+<p class="font-label-sm text-[10px] text-text-muted mb-3">JUMP TO VERSION</p>
+<nav class="space-y-1">
+<a href="#v1-0-0" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-electric-blue/10 text-electric-blue font-body-md text-sm border border-electric-blue/20">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            v1.0.0 (Stable)
+                        </a>
+</nav>
+</div>
+<a href="https://github.com/jjopensoftworks-blip/FileOrganizerAI" class="bento-card p-3 flex items-center justify-center gap-2 text-text-muted hover:text-on-surface hover:bg-surface-container-high transition-all font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">code</span>
+                    View on GitHub
+                </a>
+</div>
+</aside>
+
+<!-- Changelog body -->
+<div class="flex-1 min-w-0">
+<!-- Header -->
+<div class="mb-12">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    Latest: v1.0.0
+                </span>
+<h1 class="font-headline-lg text-headline-lg md:text-5xl mb-4 tracking-tighter">Changelog</h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl leading-relaxed">
+                    The release history of FileOrganizerAI. Every version — what changed in offline
+                    organization, on-device AI, privacy, and language support.
+                </p>
+</div>
+
+<!-- Timeline -->
+<div class="relative">
+<!-- vertical line -->
+<div class="absolute left-[7px] top-2 bottom-2 w-[2px] tl-line hidden sm:block"></div>
+
+<!-- ── v1.0.0 ─────────────────────────────────────────── -->
+<section id="v1-0-0" class="relative sm:pl-12 scroll-mt-24 mb-16">
+<!-- dot -->
+<div class="hidden sm:flex absolute left-0 top-1 w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary/20 items-center justify-center"></div>
+
+<!-- meta -->
+<div class="mb-4">
+<p class="font-label-sm text-label-sm text-on-surface">V1.0.0</p>
+<p class="font-body-md text-sm text-text-muted mb-2">2026-07-17</p>
+<span class="inline-block px-2.5 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-[10px]">STABLE</span>
+</div>
+
+<!-- card -->
+<div class="bento-card rounded-xl p-bento-padding md:p-8">
+<h2 class="font-headline-lg text-[26px] text-on-surface mb-3">First public release</h2>
+<p class="font-body-md text-text-muted mb-6 leading-relaxed">
+                            FileOrganizerAI 1.0 — a free, fully offline file organizer for Windows,
+                            available on the Microsoft Store. Point it at a messy folder, preview a
+                            tidy set of category folders, then apply with one-click Undo.
+                        </p>
+
+<!-- Privacy highlight callout -->
+<div class="border-l-4 border-l-secondary bg-secondary/5 rounded-r-lg p-4 mb-8">
+<p class="font-label-sm text-label-sm text-secondary mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">shield</span> PRIVATE BY DESIGN
+                            </p>
+<p class="font-body-md text-sm text-on-surface/90">
+                                Your files and their contents are <span class="font-semibold">never transmitted</span>.
+                                No accounts, no telemetry. The one optional network call is a one-time,
+                                opt-in AI model download — decline it and the app never touches the network.
+                            </p>
+</div>
+
+<!-- Section: Organize -->
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-electric-blue mb-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-electric-blue"></span> ORGANIZE
+                            </p>
+<div class="space-y-3">
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">One-click, fully offline organization.</span> <span class="text-text-muted">Pick any folder, hit Analyze, and get a proposed category folder for every file.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Two layouts, one scan.</span> <span class="text-text-muted">Flip instantly between a nested "By type" tree (Documents/Invoices) and a flat "By topic" view (all Invoices together) — no re-scan.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Preview and edit before anything happens.</span> <span class="text-text-muted">Review every proposed move and edit any category inline.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Copy with one-click Undo.</span> <span class="text-text-muted">Files are copied into an Organized folder; your originals stay put, and Undo reverses the last run.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Collision-safe.</span> <span class="text-text-muted">Duplicate names get a (n) suffix — nothing is ever overwritten.</span></p>
+</div>
+</div>
+
+<!-- Section: On-device AI -->
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-tertiary mb-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> OPTIONAL ON-DEVICE AI
+                            </p>
+<div class="space-y-3">
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Group by meaning, not just by name.</span> <span class="text-text-muted">Turn on "Use semantic AI" and a local neural model suggests smarter categories for tricky files.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Opt-in, one-time download.</span> <span class="text-text-muted">The model downloads only on your say-so, then runs entirely on your device — no data is sent anywhere.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Fast rules by default.</span> <span class="text-text-muted">Leave AI off and quick keyword rules do the job, with no download and no network calls at all.</span></p>
+</div>
+</div>
+
+<!-- Section: Languages & privacy -->
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-secondary mb-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> LANGUAGES &amp; PRIVACY
+                            </p>
+<div class="space-y-3">
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">10 languages.</span> <span class="text-text-muted">English, Spanish, French, German, Portuguese, Italian, Russian, Japanese, Simplified Chinese, and Hindi — auto-detected from Windows and switchable at runtime, no restart.</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Contents stay closed.</span> <span class="text-text-muted">Categorization uses file names and basic properties; files are opened only if you opt into "Read file contents".</span></p>
+<p class="font-body-md text-on-surface/90"><span class="font-semibold">Encrypted local activity.</span> <span class="text-text-muted">On-device activity logs are stored encrypted — not telemetry, and nothing leaves the PC.</span></p>
+</div>
+</div>
+
+<!-- Feature grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div class="bento-card rounded-lg p-4 bg-surface-deep">
+<span class="material-symbols-outlined text-electric-blue text-[22px] mb-2">bolt</span>
+<h4 class="font-headline-md text-[15px] text-on-surface">Instant by default</h4>
+<p class="font-body-md text-sm text-text-muted">A fast local classifier sorts by extension, filename rules, and discovered topics in seconds.</p>
+</div>
+<div class="bento-card rounded-lg p-4 bg-surface-deep">
+<span class="material-symbols-outlined text-tertiary text-[22px] mb-2">smart_toy</span>
+<h4 class="font-headline-md text-[15px] text-on-surface">On-device AI (optional)</h4>
+<p class="font-body-md text-sm text-text-muted">A local model for smarter categories, running fully on your machine.</p>
+</div>
+<div class="bento-card rounded-lg p-4 bg-surface-deep">
+<span class="material-symbols-outlined text-secondary text-[22px] mb-2">undo</span>
+<h4 class="font-headline-md text-[15px] text-on-surface">Preview &amp; Undo</h4>
+<p class="font-body-md text-sm text-text-muted">Nothing moves until you say so; reverse the whole run with one click.</p>
+</div>
+<div class="bento-card rounded-lg p-4 bg-surface-deep">
+<span class="material-symbols-outlined text-primary text-[22px] mb-2">translate</span>
+<h4 class="font-headline-md text-[15px] text-on-surface">10 languages</h4>
+<p class="font-body-md text-sm text-text-muted">Auto-detected and switchable at runtime with no restart.</p>
+</div>
+</div>
+
+<!-- Good to know -->
+<div class="border-t border-surface-border pt-6">
+<p class="font-label-sm text-label-sm text-text-muted mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">info</span> GOOD TO KNOW
+                            </p>
+<ul class="space-y-2">
+<li class="flex items-start gap-3 font-body-md text-sm text-text-muted">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span>This free release shows up to <span class="text-on-surface font-semibold">500 files per run</span> and skips files larger than <span class="text-on-surface font-semibold">5&nbsp;MB</span>.</span>
+</li>
+<li class="flex items-start gap-3 font-body-md text-sm text-text-muted">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span>Requires <span class="text-on-surface font-semibold">Windows 10 build 17763 (1809) or later, x64</span>.</span>
+</li>
+<li class="flex items-start gap-3 font-body-md text-sm text-text-muted">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span>The optional AI model is roughly <span class="text-on-surface font-semibold">2&nbsp;GB</span> and needs matching free disk space if you choose to download it.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+</div>
+<!-- /timeline -->
+</div>
+<!-- /changelog body -->
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="relative w-full bottom-0 bg-surface-deep border-t border-surface-border flex flex-col md:flex-row justify-between items-center px-margin-page py-8 mt-auto">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<p class="font-headline-md text-[20px] text-on-surface">FileOrganizerAI</p>
+<p class="font-body-md text-body-md text-text-muted">© FileOrganizerAI · Offline file organizer for Windows. Your files never leave your PC.</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-opacity duration-200" href="index.html#features">Features</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-opacity duration-200" href="index.html#privacy">Privacy</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-opacity duration-200" href="changelog.html">Changelog</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-on-surface transition-opacity duration-200" href="https://github.com/jjopensoftworks-blip/FileOrganizerAIPage">GitHub</a>
+</div>
+</footer>
+</body></html>
