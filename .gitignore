@@ -1,0 +1,6 @@
+# Private Local Documentation & Git Archives
+local/
+*.local
+.env
+.DS_Store
+Thumbs.db
